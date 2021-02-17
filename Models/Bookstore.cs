@@ -8,7 +8,9 @@ namespace Assignment5.Models
 {
     public class Bookstore
     {
+        //All fields are required
         [Required]
+        //generates the BookID as the primary key
         [Key]
         public int BookID { get; set; }
         [Required]
@@ -21,6 +23,7 @@ namespace Assignment5.Models
         public string Publisher { get; set; }
         [Required]
 
+        //ISBN validation requires the user to input the ISBN in the correct format
         [RegularExpression(@"^(?=(?:\D*\d){3}(?:(?:\D*\d){10})?$)[\d-]+$",
             ErrorMessage ="ISBN is not in the required format of ###-##########")]
         public string ISBN { get; set; }

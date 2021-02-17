@@ -1,21 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bookstore";
 }
 @model IQueryable<Bookstore>
-
-<header>
-    <h1>Bookstore</h1>
-</header>
-
+<!--Picture on homepage-->
+    <img src="~/img/books2.jpeg" width="500" />
+<br />
 @foreach (var x in Model)
 {
-<div>
-    <h5>Book Title: @x.Title</h5>
-    <p> Author Name: @x.AuthorFname @x.AuthorLname</p>
-    <p>Publisher: @x.Publisher </p>
-    <p>ISBN: @x.ISBN </p>
-    <p>Classification: @x.Classification </p>
-    <p>Category: @x.Category</p>
-    <p>Price: $@x.Price </p>
+<!--creates a list of the books w/ a simple bootstrap style-->
+<div class="list-group">
+    <ul>
+        <li class="list-group-item">
+            <h5>Book Title: @x.Title</h5>
+            <p> Author Name: @x.AuthorFname @x.AuthorLname</p>
+            <p>Publisher: @x.Publisher </p>
+            <p>ISBN: @x.ISBN </p>
+            <p>Classification: @x.Classification </p>
+            <p>Category: @x.Category</p>
+            <p>Price: $@x.Price </p>
+        </li>
+    </ul>
 </div>
 }

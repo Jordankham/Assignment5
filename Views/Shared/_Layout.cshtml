@@ -4,12 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Bookstore</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!--links to simple bootstrap styles-->
 </head>
 <body>
-    <div>
+    <!--using the boostrap page, this centers the text and contents of the body and index page-->
+    <div class="text-center">
+        <h1>@ViewBag.Title</h1>
+    </div>
+    <div class="text-center">
         @RenderBody()
     </div>
+    <footer>Khamvongsouk 2021</footer>
 </body>
 </html>
