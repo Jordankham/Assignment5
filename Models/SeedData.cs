@@ -32,7 +32,8 @@ namespace Assignment5.Models
                     ISBN = "978-0451419439",
                     Classification = "Fiction",
                     Category = "Classic",
-                    Price = 9.95
+                    Price = 9.95,
+                    PageNumber = 1488
                     },
 
                     new Bookstore
@@ -44,7 +45,8 @@ namespace Assignment5.Models
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        PageNumber = 944
                     },
 
                     new Bookstore
@@ -56,7 +58,8 @@ namespace Assignment5.Models
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        PageNumber = 832
                     },
 
                      new Bookstore
@@ -68,7 +71,8 @@ namespace Assignment5.Models
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                         PageNumber = 864
                       },
 
                     new Bookstore
@@ -80,7 +84,8 @@ namespace Assignment5.Models
                         ISBN = "978-0812974492",
                         Classification = " Non-Fiction", 
                         Category = "Historical",
-                        Price = 13.33
+                        Price = 13.33,
+                        PageNumber = 528
                     },
 
                     new Bookstore
@@ -92,7 +97,8 @@ namespace Assignment5.Models
                         ISBN = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
-                        Price = 15.95
+                        Price = 15.95,
+                        PageNumber = 288
                     },
 
                     new Bookstore
@@ -104,7 +110,8 @@ namespace Assignment5.Models
                         ISBN = "978-1455586691",
                         Classification = "Non-Fiction", 
                         Category= "Self-Help",
-                        Price = 14.99
+                        Price = 14.99,
+                        PageNumber = 304
                     },
 
                     new Bookstore
@@ -116,7 +123,8 @@ namespace Assignment5.Models
                         ISBN = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 21.66
+                        Price = 21.66,
+                        PageNumber = 240
                     },
 
                     new Bookstore
@@ -128,7 +136,8 @@ namespace Assignment5.Models
                         ISBN = "978-1591847984",
                         Classification = "Non-Fiction", 
                         Category = "Business",
-                        Price = 15.03
+                        Price = 15.03,
+                        PageNumber = 400
                     },
 
                     new Bookstore
@@ -140,7 +149,47 @@ namespace Assignment5.Models
                         ISBN = "978-0553393613",
                         Classification = "Fiction", 
                         Category = "Thrillers",
-                        Price = 15.03
+                        Price = 15.03,
+                        PageNumber = 642
+                    },
+
+                    new Bookstore
+                    {
+                        Title = "The Book of Mormon",
+                        AuthorFname = "Heavenly",
+                        AuthorLname = "Father",
+                        Publisher = "The Church of Jesus Christ of Latter-day Saints",
+                        ISBN = "980-9217462817",
+                        Classification = "Non-Fiction",
+                        Category = "Religion",
+                        Price = 0.00,
+                        PageNumber = 531
+                    },
+                    
+                    new Bookstore
+                    {
+                        Title = "The Very Hungry Caterpiller",
+                        AuthorFname = "Eric",
+                        AuthorLname = "Carle",
+                        Publisher = "World Publishing Company",
+                        ISBN = "978-0993214620",
+                        Classification = "Fiction",
+                        Category = "Childrens",
+                        Price = 9.00,
+                        PageNumber = 22
+                    },
+
+                    new Bookstore
+                    {
+                        Title = "Harry Potter and the Sorcerer's Stone",
+                        AuthorFname = "J.K",
+                        AuthorLname = "Rowling",
+                        Publisher = "Schoolastic",
+                        ISBN = "978-0729356819",
+                        Classification = "Fiction",
+                        Category = "Fantasy",
+                        Price = 20.31,
+                        PageNumber = 223
                     }
                     );
 

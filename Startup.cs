@@ -54,12 +54,16 @@ namespace Assignment5
             app.UseRouting();
 
             app.UseAuthorization();
+            //this allows for the user to type P2 to access the second page and or P3 to access the third page and so on
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "Bookstore/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsurePopulated(app);

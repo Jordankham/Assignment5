@@ -3,12 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bookstore</title>
+    <title>@ViewData["Title"] - Best Books</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <!--links to simple bootstrap styles-->
 </head>
-<body>
+<body class="text-center">
     <!--using the boostrap page, this centers the text and contents of the body and index page-->
+    <div class="bg-dark text-white p-1">
+        <span class="navbar-brand ml-2">
+            Welcome to My Bookstore
+        </span>
+    </div>
     <div class="text-center">
         <h1>@ViewBag.Title</h1>
     </div>
