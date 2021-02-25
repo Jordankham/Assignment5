@@ -38,6 +38,11 @@ namespace Assignment5.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+                //the if statement changes the class for the current page to 'active' which is a css style to highlight current page
+                if (i == PageModel.CurrentPage)
+                {
+                    tag.Attributes["class"] = "active";
+                }
                 tag.InnerHtml.Append(i.ToString());
                 
                 result.InnerHtml.AppendHtml(tag);
