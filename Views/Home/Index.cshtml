@@ -8,27 +8,7 @@
 @foreach (var x in Model.Bookstores)
 {
 <!--creates a list of the books w/ a simple bootstrap style-->
-<div class="list-group ">
-    <div class="bg-faded p-1">
-        <ul>
-            <li class="list-group-item">
-                <h5>Book Title: @x.Title</h5>
-                <p> Author Name: @x.AuthorFname @x.AuthorLname</p>
-                <p>Publisher: @x.Publisher </p>
-                <p>ISBN: @x.ISBN </p>
-                <p>Classification: @x.Classification </p>
-                <p>Category: @x.Category</p>
-                
-                <p>Page Numbers: @x.PageNumber</p>
-                <span class="badge badge-pill badge-primary">
-                    <p>Price: $@x.Price </p>
-                </span>
-
-            </li>
-
-        </ul>
-    </div>
-</div>
+    <partial name="BookstoreSummary" model="x" />
 }
 <!--dynamically creating links to different page numbers based on number of items-->
 <!--the class is a css style that highlights the current page-->

@@ -1,0 +1,24 @@
+﻿@model Bookstore
+
+<div class="list-group ">
+    <div class="bg-faded p-1">
+        <ul>
+            <li class="list-group-item">
+                <h5>Book Title: @Model.Title</h5>
+                <p> Author Name: @Model.AuthorFname @Model.AuthorLname</p>
+                <p>Publisher: @Model.Publisher </p>
+                <p>ISBN: @Model.ISBN </p>
+                <p>Classification: @Model.Classification </p>
+                <p>Category: @Model.Category</p>
+
+                <p>Page Numbers: @Model.PageNumber</p>
+                <span class="badge badge-pill badge-primary">
+                    <p>Price: $@Model.Price </p>
+                </span>
+
+            </li>
+
+        </ul>
+    </div>
+</div>
+

@@ -29,7 +29,7 @@ namespace Assignment5
 
             services.AddDbContext<BookstoreDBContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:BookstoreConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BookstoreConnection"]);
             });
 
             services.AddScoped<IBookRepository, EFBookstoreRepository>();

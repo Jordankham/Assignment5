@@ -22,11 +22,12 @@ namespace Assignment5.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             return View(new BookListViewModel
             {
                 Bookstores = _repository.Bookstores
+                    .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookID)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize)
@@ -36,7 +37,8 @@ namespace Assignment5.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalNumItems = _repository.Bookstores.Count()
-                }
+                },
+                CurrentCategory = category
             });
         }
 
