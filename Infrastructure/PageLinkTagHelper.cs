@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Assignment5.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-model")]
@@ -27,6 +28,9 @@ namespace Assignment5.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
 
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
+
         //Overriding
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
@@ -37,7 +41,9 @@ namespace Assignment5.Infrastructure
             for (int i =1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
                 //the if statement changes the class for the current page to 'active' which is a css style to highlight current page
                 if (i == PageModel.CurrentPage)
                 {

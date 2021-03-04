@@ -2,8 +2,6 @@
     ViewData["Title"] = "Best Books";
 }
 @model BookListViewModel
-<!--Picture on homepage-->
-    <img src="~/img/books2.jpeg" width="500" />
 <br />
 @foreach (var x in Model.Bookstores)
 {
@@ -12,4 +10,5 @@
 }
 <!--dynamically creating links to different page numbers based on number of items-->
 <!--the class is a css style that highlights the current page-->
-<div page-model="@Model.PagingInfo" page-action="Index" class="paginationhighlight"></div> 
+<div page-model="@Model.PagingInfo" page-action="Index" page-url-category="@Model.CurrentCategory"
+     class="paginationhighlight"></div> 

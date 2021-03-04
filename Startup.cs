@@ -55,10 +55,23 @@ namespace Assignment5
 
             app.UseAuthorization();
             //this allows for the user to type P2 to access the second page and or P3 to access the third page and so on
+            //created more options to be used during routing/navigation
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+               endpoints.MapControllerRoute("catpage",
+                   "{category}/{page:int}",
+                   new { Controller = "Home" , action = "index"});
+
+               endpoints.MapControllerRoute("page",
+                   "Bookstore/{page:int}",
+                   new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
+               endpoints.MapControllerRoute(
                     "pagination",
                     "Bookstore/P{page}",
                     new { Controller = "Home", action = "Index" });

@@ -30,13 +30,13 @@ namespace Assignment5.Controllers
                     .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookID)
                     .Skip((page - 1) * PageSize)
-                    .Take(PageSize)
-                    ,
+                    .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Bookstores.Count()
+                    TotalNumItems = category == null? _repository.Bookstores.Count() :
+                        _repository.Bookstores.Where (x => x.Category == category).Count()
                 },
                 CurrentCategory = category
             });
