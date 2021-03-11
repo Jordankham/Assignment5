@@ -9,7 +9,7 @@ namespace Assignment5.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem(Bookstore book, int qty)
+        public virtual void AddItem(Bookstore book, int qty)
         {
             CartLine line = Lines
                 .Where(b => b.Bookstore.BookID == book.BookID)
@@ -29,10 +29,10 @@ namespace Assignment5.Models
             }
         }
 
-        public void RemoveLine(Bookstore book) =>
+        public virtual void RemoveLine(Bookstore book) =>
             Lines.RemoveAll(x => x.Bookstore.BookID == book.BookID);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public double ComputeTotalSum() => Lines.Sum(e => e.Bookstore.Price * e.Quantity);
 

@@ -7,10 +7,20 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <!--links to simple bootstrap styles-->
+    <script src="https://kit.fontawesome.com/9873785e23.js" crossorigin="anonymous"></script>
 </head>
 <body class="text-center">
     <!--I set up the other pages necessary for the Cart Summary Widget but it breaks when I put it in the layout-->
-
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Bookstore</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--using the boostrap page, this centers the text and contents of the body and index page-->
     <div class="bg-dark text-white p-1">

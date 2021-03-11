@@ -13,9 +13,10 @@ namespace Assignment5.Pages
     {
         private IBookRepository repository;
         //Constructor
-        public BuyModel(IBookRepository repo)
+        public BuyModel(IBookRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
         //Properties
         public Cart Cart { get; set; }
@@ -25,7 +26,7 @@ namespace Assignment5.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            
         }
 
 
@@ -33,11 +34,11 @@ namespace Assignment5.Pages
         {
             Bookstore bookstore = repository.Bookstores.FirstOrDefault(b => b.BookID == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            
 
             Cart.AddItem(bookstore, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+           
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
@@ -46,11 +47,11 @@ namespace Assignment5.Pages
         {
             Bookstore bookstore = repository.Bookstores.FirstOrDefault(b => b.BookID == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+          
 
             Cart.RemoveLine(bookstore);
 
-            HttpContext.Session.SetJson("cart", Cart);
+           
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
